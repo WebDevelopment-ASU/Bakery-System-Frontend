@@ -1,0 +1,6 @@
+{
+    "watch": ["src"],
+    "ext": "js,jsx,css,html",
+    "ignore": ["src/**/*.test.js"],
+    "exec": "npm run lint && npm run fix && npm run start || exit 1"
+}
