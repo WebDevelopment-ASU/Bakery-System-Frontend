@@ -15,4 +15,4 @@ services:
       - NODE_ENV=development
     stdin_open: true
     tty: true
-    command: npm run start
+    command: sh -c "npm run format && npm run lint && npm run fix && npm run start"
