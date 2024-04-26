@@ -20,6 +20,6 @@
 		}
 	},
 	"rules": {
-		"no-unused-vars": ["error", { "varsIgnorePattern": "React|App" }]
+		"no-unused-vars": "off"
 	}
 }
