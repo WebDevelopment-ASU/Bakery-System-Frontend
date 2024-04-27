@@ -9,6 +9,7 @@ function LoginPage(props) {
 
     return (
         <div className="container">
+            <h2> Login </h2>
             <form className="Login_form" onSubmit={handleSubmit}>
                 <label htmlFor="email">Email</label>
                 <input
@@ -35,5 +36,4 @@ function LoginPage(props) {
         </div>
     );
 }
-
 export default LoginPage;

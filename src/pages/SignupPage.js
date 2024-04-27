@@ -11,8 +11,9 @@ const SignupPage = (props) => {
 
     return (
         <div className="container">
+            <h2> Sign Up </h2>
             <form className="SignUp_form" onSubmit={handleSubmit}>
-                <lable htmlFor="username"> Username </lable>
+            <lable htmlFor="username"> Username </lable>
                 <input
                     type="text"
                     name="username"
@@ -20,6 +21,7 @@ const SignupPage = (props) => {
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
+                
                 <lable htmlFor="email"> Email </lable>
                 <input
                     type="email"
@@ -29,14 +31,15 @@ const SignupPage = (props) => {
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <lable htmlFor="Password"> Password </lable>
-                <input
+                     <input
                     type="password"
                     name="password"
                     placeholder="***********"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                />
-                <button type="Submit"> Sign up </button>
+                     />
+                
+                     <button type="Submit"> Sign up </button>
             </form>
             <h5> Already have an account?</h5>
             <button className="link-button" onClick={() => props.OnFormSwitch('login')}>
