@@ -5,43 +5,45 @@
   align-items:center ;
   justify-content: center;
   background-color: #e8e8e8;
-  background-image:url("https://th.bing.com/th/id/R.4b381554fd026eeba21b6f12931934e3?rik=IpUxCTb%2fAhu8fA&pid=ImgRaw&r=0") ;
-  background-size: cover;
-  
+  /* background-image:url("D:\bakery\Bakery-System-Frontend\src\assets\240_F_195389412_qG5MuP6lBvAYmXV2ky8D1EmDo1cD8J0o.jpg") ;
+  background-position-y: top;
+  background-repeat: no-repeat; */
 }
-
+h2{
+  text-align: center;
+  text-decoration: solid;
+}
 .container, .Login_form ,.SignUp_form{
   display: flex;
   flex-direction: column;
   background-color: whitesmoke ;
-  align-items: center;
-  padding: 2rem;
-}
-.login-form {
-  border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 5px;
+  align-items: left;
+  padding: 4rem;
+
+  border: 3px solid #ccc;
+  border-radius: 40px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-label{
+
+label ,.Login_form , .SignUp_form{
   text-align: left;
-  padding: 0.25rem 0;
+  padding: 0.8rem 0;
 }
-input{
-  margin: 0.5rem 0;
+input , .Login_form, .SignUp_form{
+  margin: 1rem 0;
   padding: 1rem;
   border: none;
   border-radius: 10px;
 }
-button{
+button {
   border: none;
   background-color: white;
   padding: 5px;
-  border-radius: 30px;
+  border-radius: 10px;
   cursor: pointer;
 }
-.link-button{
+.link-button {
   background: none;
   color:blue ;
   text-decoration:underline ;
