@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './StaffNavbar.module.css';
-import { IoPersonSharp } from "react-icons/io5";
+import { IoPersonSharp } from 'react-icons/io5';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -16,15 +16,18 @@ const Navbar = () => {
                 <a href="/About">About</a>
                 <a href="/products">Products</a>
                 <a href="/add">Add New Product</a>
-                <a href="/profileIcon"><IoPersonSharp /></a>               
+                <a href="/profileIcon">
+                    <IoPersonSharp />
+                </a>
             </div>
 
-            <div className={isOpen ? `${styles.navToggle} ${styles.open}` : styles.navToggle}
-                onClick={() => setIsOpen(!isOpen)}>
+            <div
+                className={isOpen ? `${styles.navToggle} ${styles.open}` : styles.navToggle}
+                onClick={() => setIsOpen(!isOpen)}
+            >
                 <div className={styles.bar}></div>
             </div>
         </div>
     );
 };
 export default Navbar;
-
