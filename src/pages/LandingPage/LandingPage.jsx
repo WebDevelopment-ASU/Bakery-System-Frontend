@@ -28,23 +28,20 @@ const service = [
 
 const Landing = () => {
     return (
-        <section className="bg-gray-100 pt-0 pb-16">
-            <div className="relative">
-                {/* Background image */}
-                <img src={banner} alt="Bakery" className="w-full h-auto mb-8" />
-
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black opacity-25"></div>
+        <section className="bg-rose-50 pt-0 pb-16">
+            <div className="flex items-center justify-center">
+                {/* Banner photo */}
+                <div className="w-1/2">
+                    <img src={banner} alt="Bakery" className="w-full h-auto rounded-full transform" />
+                </div>
 
                 {/* Content */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="container mx-auto text-center">
-                        <h1 className="text-6xl font-bold text-white mb-6">Welcome to The Bakery Shop</h1>{' '}
-                        {/* Adjusted font size */}
-                        <p className="text-2xl text-gray-200 mb-8">
+                <div className="w-1/2 p-8 text-center">
+                    <div className="container mx-auto">
+                        <h1 className="text-6xl font-bold text-gray-800 mb-6">Welcome to The Bakery Shop</h1>
+                        <p className="text-2xl text-gray-800 mb-8">
                             Discover our delicious range of baked goods made with love.
-                        </p>{' '}
-                        {/* Adjusted font size */}
+                        </p>
                         <button className="px-8 py-3 bg-yellow-500 text-white font-semibold rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
                             Shop Now
                         </button>
@@ -53,16 +50,17 @@ const Landing = () => {
             </div>
 
             <div className="bg-white py-24 sm:py-32">
-                <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
-                    <div className="max-w-2xl">
-                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl underline">
-                            Our Baking Service
-                        </h2>
-                    </div>
-                    <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+                <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                    <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 mb-8">
+                        Our Baking Service
+                    </h2>
+                    <div className="flex flex-wrap justify-center gap-x-8 gap-y-12">
                         {service.map((service) => (
-                            <li key={service.name} className="hover:opacity-30">
-                                <div className="flex items-center gap-x-6">
+                            <div
+                                key={service.name}
+                                className="cursor-pointer w-full sm:w-auto hover:scale-105 transition-transform duration-300"
+                            >
+                                <div className="border p-4 rounded-lg shadow-md flex items-center gap-x-6 hover:shadow-lg">
                                     <img className="h-16 w-16 rounded-full" src={service.imageUrl} alt="" />
                                     <div>
                                         <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">
@@ -73,9 +71,9 @@ const Landing = () => {
                                         </p>
                                     </div>
                                 </div>
-                            </li>
+                            </div>
                         ))}
-                    </ul>
+                    </div>
                 </div>
             </div>
         </section>
