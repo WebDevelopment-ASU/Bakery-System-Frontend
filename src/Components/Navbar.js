@@ -10,7 +10,7 @@ const Navbar = () => {
                 <a href="./home">Home</a>
                 <a href="/About">About</a>
                 <a href="/login">Log In</a>
-                <a href="/signup">Sign Up</a>               
+                <a href="/signup">Sign Up</a>
             </div>
             <div className={`nav-toggle ${isOpen && 'open'}`} onClick={() => setIsOpen(!isOpen)}>
                 <div className="bar"></div>
@@ -19,4 +19,3 @@ const Navbar = () => {
     );
 };
 export default Navbar;
-
