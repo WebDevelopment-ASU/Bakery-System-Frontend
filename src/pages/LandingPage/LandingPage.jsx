@@ -2,8 +2,29 @@ import React from 'react';
 // import styles from './Landing.module.css'
 
 import banner from '../../images/landing1.png';
+import del from '../../images/deliveryLogo.png';
+import sell from '../../images/sellingLogo.png';
+import cust from '../../images/customizeLogo.png';
 
 // import { Link } from 'react-router-dom';
+
+const service = [
+    {
+        name: 'Catering & Delivery',
+        role: 'Swift and safe delivery services',
+        imageUrl: del,
+    },
+    {
+        name: 'Custom Cakes & Pastries',
+        role: 'Baking happiness, one cake at a time',
+        imageUrl: cust,
+    },
+    {
+        name: 'Sell Your Product',
+        role: 'Sell your bakings online with us',
+        imageUrl: sell,
+    },
+];
 
 const Landing = () => {
     return (
@@ -28,6 +49,33 @@ const Landing = () => {
                             Shop Now
                         </button>
                     </div>
+                </div>
+            </div>
+
+            <div className="bg-white py-24 sm:py-32">
+                <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+                    <div className="max-w-2xl">
+                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl underline">
+                            Our Baking Service
+                        </h2>
+                    </div>
+                    <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+                        {service.map((service) => (
+                            <li key={service.name} className="hover:opacity-30">
+                                <div className="flex items-center gap-x-6">
+                                    <img className="h-16 w-16 rounded-full" src={service.imageUrl} alt="" />
+                                    <div>
+                                        <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">
+                                            {service.name}
+                                        </h3>
+                                        <p className="text-sm font-semibold leading-6 text-indigo-600">
+                                            {service.role}
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </section>
