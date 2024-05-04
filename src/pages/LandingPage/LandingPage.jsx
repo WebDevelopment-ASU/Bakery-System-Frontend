@@ -1,12 +1,11 @@
 import React from 'react';
-// import styles from './Landing.module.css'
+
+import BestSellers from '../../Components/BestSellers';
 
 import banner from '../../images/landing1.png';
 import del from '../../images/deliveryLogo.png';
 import sell from '../../images/sellingLogo.png';
 import cust from '../../images/customizeLogo.png';
-
-// import { Link } from 'react-router-dom';
 
 const service = [
     {
@@ -76,6 +75,8 @@ const Landing = () => {
                     </div>
                 </div>
             </div>
+
+            <BestSellers />
         </section>
     );
 };
