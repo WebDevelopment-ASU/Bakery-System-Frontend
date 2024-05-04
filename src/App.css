@@ -1,9 +1,13 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.App{
+.App {
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  align-items:center ;
+  justify-content: center;
+  flex-direction: column;
   background-color: #e8e8e8;
-  height: 100vh;
+
+  /* background-image:url("D:\bakery\Bakery-System-Frontend\src\assets\240_F_195389412_qG5MuP6lBvAYmXV2ky8D1EmDo1cD8J0o.jpg") ;
+  background-position-y: top;
+  background-repeat: no-repeat; */
 }
