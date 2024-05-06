@@ -1,6 +1,13 @@
 import React from 'react';
 
-import straw from '../images/StrawberryShortcaker.png'
+import choco from '../images/ChocolateCake.png';
+import muff from '../images/blueberrymuffins.png';
+import red from '../images/RedVelvetCake.png';
+import vanil from '../images/VanillaCupCakes.png';
+import tart from '../images/FruitTart.png';
+import chee from '../images/CheeseCake.png';
+import lemo from '../images/LemonBars.png';
+import straw from '../images/StrawberryShortcaker.png';
 
 const BestSellers = () => {
     const BestSellers = [
@@ -8,43 +15,43 @@ const BestSellers = () => {
             id: 1,
             name: 'Chocolate Cake',
             description: 'Delicious chocolate cake with rich flavor.',
-            imageUrl: straw,
+            imageUrl: choco,
         },
         {
             id: 2,
             name: 'Blueberry Muffins',
             description: 'Moist blueberry muffins with a hint of lemon.',
-            imageUrl: straw,
+            imageUrl: muff,
         },
         {
             id: 3,
             name: 'Red Velvet Cake',
             description: 'Classic red velvet cake with cream cheese frosting.',
-            imageUrl: straw,
+            imageUrl: red,
         },
         {
             id: 4,
             name: 'Vanilla Cupcakes',
             description: 'Delicate vanilla cupcakes topped with buttercream icing.',
-            imageUrl: straw,
+            imageUrl: vanil,
         },
         {
             id: 5,
             name: 'Fruit Tart',
             description: 'Colorful fruit tart with a buttery pastry crust.',
-            imageUrl: straw,
+            imageUrl: tart,
         },
         {
             id: 6,
             name: 'Cheesecake',
             description: 'Creamy cheesecake with a graham cracker crust.',
-            imageUrl: straw,
+            imageUrl: chee,
         },
         {
             id: 7,
             name: 'Lemon Bars',
             description: 'Zesty lemon bars with a shortbread crust.',
-            imageUrl: straw,
+            imageUrl: lemo,
         },
         {
             id: 8,
@@ -57,13 +64,13 @@ const BestSellers = () => {
     return (
         <div className="bg-white">
             <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 text-center">
-            <h2 className="text-3xl italic font-extrabold tracking-wide text-gray-900 mb-8 w-full">Best Sellers</h2>
+                <h2 className="text-3xl italic font-extrabold tracking-wide text-gray-900 mb-8 w-full">Best Sellers</h2>
 
                 <div className="mt-16 grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-12">
                     {BestSellers.map((product) => (
                         <div
                             key={product.id}
-                            className="group relative overflow-hidden transform transition duration-300 hover:scale-125"
+                            className="cursor-pointer group relative overflow-hidden transform transition duration-300 hover:scale-125"
                         >
                             <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200">
                                 <img
