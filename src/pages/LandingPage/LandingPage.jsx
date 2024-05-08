@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import BestSellers from '../../components/BestSellers';
 
@@ -35,6 +36,12 @@ const service = [
 ];
 
 const Landing = () => {
+    const navigate = useNavigate();
+
+    const handleRedirect = () => {
+        navigate('/login');
+    };
+
     return (
         <section className="bg-white">
             <style>
@@ -76,7 +83,7 @@ const Landing = () => {
                             <p className="text-2xl text-gray-800 mb-8">
                                 Discover our delicious range of baked goods made with love.
                             </p>
-                            <button className="px-8 py-3 bg-[#ba825f] text-white font-semibold rounded-md hover:bg-[#a06846] focus:outline-none focus:bg-yellow-600">
+                            <button onClick={handleRedirect} className="px-8 py-3 bg-[#ba825f] text-white font-semibold rounded-md hover:bg-[#a06846] focus:outline-none focus:bg-yellow-600">
                                 Shop Now
                             </button>
                         </div>
@@ -122,7 +129,7 @@ const Landing = () => {
                 </div>
             </div>
 
-            <BestSellers />
+            <BestSellers onProductClick={handleRedirect} />
         </section>
     );
 };

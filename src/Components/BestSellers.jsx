@@ -9,7 +9,7 @@ import chee from '../images/CheeseCake.png';
 import lemo from '../images/LemonBars.png';
 import straw from '../images/StrawberryShortcaker.png';
 
-const BestSellers = () => {
+const BestSellers = ({ onProductClick }) => {
     const BestSellers = [
         {
             id: 1,
@@ -70,6 +70,7 @@ const BestSellers = () => {
                     {BestSellers.map((product) => (
                         <div
                             key={product.id}
+                            onClick={onProductClick}
                             className="cursor-pointer group relative overflow-hidden transform transition duration-300 hover:scale-125"
                         >
                             <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200">

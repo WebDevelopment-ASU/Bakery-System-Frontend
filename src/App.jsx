@@ -1,15 +1,22 @@
-import styles from './App.module.css';
-import Navbar from './components/Navbar.jsx';
-import LandingPage from './pages/LandingPage/LandingPage.jsx';
-// import Landing from './Components/Landing'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import LandingPage from './pages/LandingPage/LandingPage';
+import LoginPage from './pages/login/LoginPage';
 
 function App() {
-    return (
-        <div className={styles.App}>
-            <Navbar />
-            <LandingPage />
-        </div>
-    );
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          {/* Add other routes as needed */}
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
