@@ -38,7 +38,7 @@ const Landing = () => {
     return (
         <section className="bg-white">
             <style>{fadeAnimation}</style>
-            <div className="bg-rose-50 pt-16 pb-16">
+            <div className="bg-gradient-to-r from-rose-200 to-rose-50 pt-16 pb-16">
                 <div className="flex items-center justify-center">
                     {/* Banner photo */}
                     <div className="w-1/2">
