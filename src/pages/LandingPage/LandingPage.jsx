@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BestSellers from '../../components/BestSellers'
+import BestSellers from '../../components/BestSellers';
 
 import banner from '../../images/landing1.png';
 import land2 from '../../images/landing2.png';
@@ -93,10 +93,7 @@ const Landing = () => {
                                 Our Baking Service
                             </h2>
                             {service.map((service) => (
-                                <div
-                                    key={service.name}
-                                    className="service-card"
-                                >
+                                <div key={service.name} className="service-card">
                                     <div className="flex items-center gap-x-6">
                                         <img className="h-16 w-16 rounded-full" src={service.imageUrl} alt="" />
                                         <div>
