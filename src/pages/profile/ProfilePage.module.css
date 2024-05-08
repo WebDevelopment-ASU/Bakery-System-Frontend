@@ -1,0 +1,75 @@
+/* .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem;
+    background-color: whitesmoke;
+    border: 3px solid #ccc;
+    border-radius: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+  } */
+/*   
+  .logo {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo img {
+    max-width: 100px;
+    height: auto;
+  } */
+  
+  /* .profile {
+    border: none;
+    box-shadow: white;
+    padding: 2rem;
+    width: 100%;
+    max-width: 300px;
+  } */
+  
+  .h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #b2734c;
+  }
+  
+  .label {
+    text-align: left;
+    padding: 0.8rem;
+    display: block;
+    font-size: large;
+    font-weight: bold;
+  }
+  
+  .input {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: larger;
+  }
+  
+ .Edit_button {
+    background-color: #b2734c;
+    padding: 10px;
+    border-radius: 10px;
+    width: 5%;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .Edit_button:hover {
+    opacity: 0.8;
+  }
+  
