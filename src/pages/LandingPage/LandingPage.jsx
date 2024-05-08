@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BestSellers from '../../Components/BestSellers';
+import BestSellers from '../../components/BestSellers'
 
 import banner from '../../images/landing1.png';
 import land2 from '../../images/landing2.png';
@@ -37,7 +37,31 @@ const service = [
 const Landing = () => {
     return (
         <section className="bg-white">
-            <style>{fadeAnimation}</style>
+            <style>
+                {fadeAnimation}
+                {`
+                    .service-card {
+                        transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
+                        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                        padding: 1rem;
+                        margin-bottom: 2rem;
+                        background-color: white;
+                        border-radius: 0.5rem;
+                    }
+                    .service-card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                        background-color: #d4a181;
+                    }
+                    .vertical-photo {
+                        filter: brightness(80%);
+                        transition: filter 300ms ease-in-out;
+                    }
+                    .vertical-photo:hover {
+                        filter: brightness(100%);
+                    }
+                `}
+            </style>
             <div className="bg-gradient-to-r from-rose-200 to-rose-50 pt-16 pb-16">
                 <div className="flex items-center justify-center">
                     {/* Banner photo */}
@@ -52,7 +76,7 @@ const Landing = () => {
                             <p className="text-2xl text-gray-800 mb-8">
                                 Discover our delicious range of baked goods made with love.
                             </p>
-                            <button className="px-8 py-3 bg-yellow-500 text-white font-semibold rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
+                            <button className="px-8 py-3 bg-[#ba825f] text-white font-semibold rounded-md hover:bg-[#a06846] focus:outline-none focus:bg-yellow-600">
                                 Shop Now
                             </button>
                         </div>
@@ -71,9 +95,9 @@ const Landing = () => {
                             {service.map((service) => (
                                 <div
                                     key={service.name}
-                                    className="cursor-pointer mb-14 hover:scale-105 transition-transform duration-300"
+                                    className="service-card"
                                 >
-                                    <div className="border p-4 rounded-lg shadow-md flex items-center gap-x-6 hover:shadow-lg">
+                                    <div className="flex items-center gap-x-6">
                                         <img className="h-16 w-16 rounded-full" src={service.imageUrl} alt="" />
                                         <div>
                                             <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">
@@ -94,7 +118,7 @@ const Landing = () => {
                         <img
                             src={land2}
                             alt="Bakery"
-                            className="max-w-full max-h-96 h-auto rounded-md shadow-lg"
+                            className="max-w-full max-h-96 h-auto rounded-md shadow-lg vertical-photo"
                             style={{ maxHeight: '90vh', maxWidth: '80vw', objectFit: 'cover' }}
                         />
                     </div>
