@@ -4,7 +4,7 @@ import Header from '../../components/Credentials-Header';
 import Footer from '../../components/Credentials-Footer';
 import styles from './SignupPage.module.css';
 
-const SignupPage = (props) => {
+const SignUpPage = (props) => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -81,4 +81,4 @@ const SignupPage = (props) => {
     );
 };
 
-export default SignupPage;
+export default SignUpPage;
