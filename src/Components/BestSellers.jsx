@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import choco from '../images/ChocolateCake.png';
 import muff from '../images/blueberrymuffins.png';
@@ -9,7 +10,7 @@ import chee from '../images/CheeseCake.png';
 import lemo from '../images/LemonBars.png';
 import straw from '../images/StrawberryShortcaker.png';
 
-const BestSellers = ({ onProductClick }) => {
+const BestSellers = () => {
     const BestSellers = [
         {
             id: 1,
@@ -68,9 +69,9 @@ const BestSellers = ({ onProductClick }) => {
 
                 <div className="mt-16 grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-12">
                     {BestSellers.map((product) => (
+                        <Link key={product.id} to="/login">
                         <div
                             key={product.id}
-                            onClick={onProductClick}
                             className="cursor-pointer group relative overflow-hidden transform transition duration-300 hover:scale-125"
                         >
                             <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200">
@@ -85,6 +86,7 @@ const BestSellers = ({ onProductClick }) => {
                                 <p className="mt-1 text-sm text-gray-500">{product.description}</p>
                             </div>
                         </div>
+                        </Link>
                     ))}
                 </div>
             </div>
