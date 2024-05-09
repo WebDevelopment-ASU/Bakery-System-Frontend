@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import httpClient from '../../utils/httpClient';
 import Header from '../../components/Credentials-Header';
 import Footer from '../../components/Credentials-Footer';
+import { Link } from 'react-router-dom';
 
 import styles from './LoginPage.module.css';
 
@@ -52,9 +53,7 @@ function LoginPage(props) {
                         </button>
                     </form>
                     <h5>Don't have an account?</h5>
-                    <button className={styles.link_button} onClick={() => props.OnFormSwitch('signup')}>
-                        Create an account
-                    </button>
+                    <Link to="/signup" className={styles.link_button}>Create an account</Link>
                 </div>
             </div>
             <Footer />
