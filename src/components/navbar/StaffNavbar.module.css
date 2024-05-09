@@ -4,16 +4,22 @@
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    padding: 0 1rem;
+    padding: 0 20px;
     box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+    z-index: 1000;
 }
 
 .navlogo{
     font-weight: 700;
-    font-size: 21px;
-    margin: 15px;
+    font-size: 24px;
+    margin: 10px;
 }
 
+.items {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
 
 .items a{
     color: black;
