@@ -1,44 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Products.module.css';
-import product1 from "../../assets/buttery-bread.png"
-import product2 from "../../assets/milky-bread.png"
-import product3 from "../../assets/creamy-patis.png"
-import product4 from "../../assets/chocolaty-bread.png"
-import product5 from "../../assets/buttery-bun.png"
-import product6 from "../../assets/buttery-bread.png"
-import product7 from "../../assets/donuts.png"
+import httpClient from '../../utils/httpClient';
+import Navbar from '../../components/navbar/StaffNavbar';
+import Footer from '../../components/footer/Footer';
 
 const Product = () => {
-   
-    return(
-        <section>
-            <div className={styles.title}>
-                <h1> Menu Of The Day</h1>
-            </div>
-            <div className={styles.products}>
-                {
-                    data.map((product)=>{
-                        return (
-                            <div className={styles.product}>
-                                <div className={styles.image}>
-                                    <img src={product.image} alt='Product Image'/>
-                                </div>
-                                <h2>{product.Name}</h2>
-                                <h3>{product.price}</h3>
-                                <p>{product.description}</p>
-                                <div className={styles.buttons}>
-                                    <button>Edit</button>
-                                    <button>Delete</button>
-                                </div>
+    const [data, setData] = useState([]);
 
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const response = await httpClient.get('/products');
+                setData(response.data.data);
+            } catch (error) {
+                console.error('Failed to fetch products:', error);
+            }
+        };
+
+        fetchProducts();
+    }, []);
+
+    return(
+        <div>
+            <Navbar />
+            <section>
+                <div className={styles.title}>
+                    <h1>Menu Of The Day</h1>
+                </div>
+                <div className={styles.products}>
+                    {data.map((product, index) => (
+                        <div key={index} className={styles.product}>
+                            <div className={styles.image}>
+                                <img src={product.images} alt={product.name} />
                             </div>
-                        )
-                    })
-                }
-            </div>
-        </section>
+                            <h2>{product.name}</h2>
+                            <h3>${product.price}</h3>
+                            <p>{product.description}</p>
+                            <div className={styles.buttons}>
+                                <button>Edit</button>
+                                <button>Delete</button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+            <Footer />
+        </div>
     );
-    
 };
 
 export default Product;
