@@ -35,10 +35,6 @@ const Footer = () => {
                             </a>
                         </container>
                     </div>
-
-                    <div className={styles.Div}>
-                        <button className={styles.button}>Shop Online</button>
-                    </div>
                 </div>
             </div>
             <footer className={styles.mainfooter}>© Bakery System 2024</footer>
