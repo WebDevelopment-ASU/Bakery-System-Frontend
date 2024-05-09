@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import httpClient from '../../utils/httpClient';
 import Header from '../../components/Credentials-Header';
 import Footer from '../../components/Credentials-Footer';
+import { Link } from 'react-router-dom';
+
 import styles from './SignupPage.module.css';
 
-const SignupPage = (props) => {
+const SignUpPage = (props) => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -70,10 +72,10 @@ const SignupPage = (props) => {
                             Sign up
                         </button>
                     </form>
-                    <h5>Already have an account?</h5>
-                    <button className={styles.linkButton} onClick={() => props.OnFormSwitch('login')}>
-                        Login here
-                    </button>
+                    <h5 className={styles.text}>Already have an account?</h5>
+                    <Link to="/login" className={styles.linkButton}>
+                        Login
+                    </Link>
                 </div>
             </div>
             <Footer />
@@ -81,4 +83,4 @@ const SignupPage = (props) => {
     );
 };
 
-export default SignupPage;
+export default SignUpPage;

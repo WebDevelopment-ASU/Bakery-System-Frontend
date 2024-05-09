@@ -12,9 +12,9 @@ const Navbar = () => {
 
             <div className={isOpen ? `${styles.items} ${styles.open}` : styles.items}>
                 <a href="./home">Home</a>
-                <a href="/About">About</a>
-                <a href="/Login">Login</a>
-                <a href="/Signup">SignUp</a>
+                <a href="/about">About</a>
+                <a href="/login">Login</a>
+                <a href="/signup">SignUp</a>
             </div>
 
             <div
