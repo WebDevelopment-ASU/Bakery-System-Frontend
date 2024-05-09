@@ -57,7 +57,7 @@ const Product = () => {
         window.location.href = `/edit-product/${productId}`;
     };
 
-    return(
+    return (
         <div>
             <Navbar />
             <section>
