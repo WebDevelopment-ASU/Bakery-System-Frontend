@@ -53,7 +53,9 @@ function LoginPage(props) {
                         </button>
                     </form>
                     <h5>Don't have an account?</h5>
-                    <Link to="/signup" className={styles.link_button}>Create an account</Link>
+                    <Link to="/signup" className={styles.link_button}>
+                        Create an account
+                    </Link>
                 </div>
             </div>
             <Footer />

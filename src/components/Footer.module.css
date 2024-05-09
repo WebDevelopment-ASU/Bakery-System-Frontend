@@ -48,6 +48,7 @@
 
 .icons {
     padding: 10px 10px 10px 0px;
+    display: flex;
 }
 
 .icons a{
@@ -57,7 +58,7 @@
 }
 
 .button {
-    background-color: #a06846; 
+    background-color: #a06846;
     border: none;
     color: white;
     padding: 15px 32px;
