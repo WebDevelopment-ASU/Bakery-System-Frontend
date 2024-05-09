@@ -1,12 +1,11 @@
 import react from 'react';
 import styles from './Footer.module.css';
-import { FaFacebookF } from "react-icons/fa";
-import { IoLogoGithub } from "react-icons/io";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF } from 'react-icons/fa';
+import { IoLogoGithub } from 'react-icons/io';
+import { FaLinkedinIn } from 'react-icons/fa';
 
-const Footer =()=>{
+const Footer = () => {
     return (
-        
         <div className={styles.footer}>
             <div className={styles.footerPadding}>
                 <div className={styles.container}>
@@ -25,22 +24,26 @@ const Footer =()=>{
                     <div className={styles.Div}>
                         <h3>Follow Us For More:</h3>
                         <container className={styles.icons}>
-                        <a href="/fb"><FaFacebookF /></a>
-                        <a href="/github"><IoLogoGithub /></a>
-                        <a href="/linkedin">< FaLinkedinIn /></a>
+                            <a href="/fb">
+                                <FaFacebookF />
+                            </a>
+                            <a href="/github">
+                                <IoLogoGithub />
+                            </a>
+                            <a href="/linkedin">
+                                <FaLinkedinIn />
+                            </a>
                         </container>
                     </div>
 
                     <div className={styles.Div}>
                         <button className={styles.button}>Shop Online</button>
                     </div>
-
                 </div>
             </div>
             <footer className={styles.mainfooter}>© Bakery System 2024</footer>
         </div>
-        
     );
-}
+};
 
-export default Footer; 
+export default Footer;

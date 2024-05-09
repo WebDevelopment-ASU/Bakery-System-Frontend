@@ -70,22 +70,22 @@ const BestSellers = () => {
                 <div className="mt-16 grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-12">
                     {BestSellers.map((product) => (
                         <Link key={product.id} to="/login">
-                        <div
-                            key={product.id}
-                            className="cursor-pointer group relative overflow-hidden transform transition duration-300 hover:scale-125"
-                        >
-                            <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200">
-                                <img
-                                    src={product.imageUrl}
-                                    alt={product.name}
-                                    className="h-full w-full object-cover object-center"
-                                />
+                            <div
+                                key={product.id}
+                                className="cursor-pointer group relative overflow-hidden transform transition duration-300 hover:scale-125"
+                            >
+                                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200">
+                                    <img
+                                        src={product.imageUrl}
+                                        alt={product.name}
+                                        className="h-full w-full object-cover object-center"
+                                    />
+                                </div>
+                                <div className="mt-4">
+                                    <h3 className="text-lg font-semibold text-gray-900">{product.name}</h3>
+                                    <p className="mt-1 text-sm text-gray-500">{product.description}</p>
+                                </div>
                             </div>
-                            <div className="mt-4">
-                                <h3 className="text-lg font-semibold text-gray-900">{product.name}</h3>
-                                <p className="mt-1 text-sm text-gray-500">{product.description}</p>
-                            </div>
-                        </div>
                         </Link>
                     ))}
                 </div>

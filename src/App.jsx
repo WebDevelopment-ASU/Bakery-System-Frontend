@@ -6,18 +6,18 @@ import LoginPage from './pages/login/LoginPage';
 import SignUpPage from './pages/signup/SignupPage';
 
 function App() {
-  return (
-    <Router>
-      <div className={styles.App}>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignUpPage />} />
-          {/* Add other routes as needed */}
-        </Routes>
-      </div>
-    </Router>
-  );
+    return (
+        <Router>
+            <div className={styles.App}>
+                <Routes>
+                    <Route path="/" element={<LandingPage />} />
+                    <Route path="/login" element={<LoginPage />} />
+                    <Route path="/signup" element={<SignUpPage />} />
+                    {/* Add other routes as needed */}
+                </Routes>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
