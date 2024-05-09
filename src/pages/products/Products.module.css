@@ -1,0 +1,87 @@
+.title h1{
+    text-align: center;
+    font-size: 2rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #a06846;
+}
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.product{
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+    transition: transform 0.3s ease;
+}
+.product:hover {
+    transform: translateY(-5px); 
+}
+
+.image{
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+.image img{
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+.buttons {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    margin-top: 10px;
+}
+
+.buttons button {
+    background-color: #a06846;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+    margin-right: 10px;
+}
+
+
+
+
+button:hover {
+    background-color: #b38300;
+}
+@media (max-width: 768px) {
+    .product {
+        width: calc(50% - 40px); 
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        width: calc(100% - 40px); 
+    }
+}
