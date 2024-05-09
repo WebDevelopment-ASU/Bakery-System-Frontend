@@ -1,4 +1,4 @@
-.container {
+/* .container {
   display: flex;
   align-items: center;
   padding: 10rem; 
@@ -10,27 +10,27 @@
   margin-top: 10rem;
   margin-left: auto; 
   margin-right: auto; 
-}
+} */
 
-
-.photo {
+/* .photo {
   flex-shrink: 0; 
   margin-right: 5rem; 
 }
 
 .photo img {
-
   width: 300px; 
   height: 500px;
   border-radius: 1%; 
-}
+} */
 
 .h2 {
-  font-size: 28px;
+  font-size: 50px;
   font-weight: bold;
-  margin-bottom: 2rem;
-  color: #b2734c;
-  text-align: center;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;  color: #b2734c;
+  text-align: left;
   margin-right: 3rem;
 }
 
@@ -39,36 +39,115 @@
 }
 
 .profile {
-  margin-bottom: 1.5rem;
-}
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;}
 
 .label {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 40px;
+  font-weight: initial;
   color: #b2734c;
   margin-bottom: 0.5rem;
 }
 
-.input {
+.input1 {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  width: 100%;
-  font-size: 16px;
+  width: 20%;
+  font-size: 25px;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+.input2 {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 20%;
+  font-size: 25px;
+  margin-top: 1rem;
+  margin-left: 6rem;
+  margin-bottom: 1rem;
+  margin-right: 5rem;
+}
+.input3 {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 20%;
+  font-size: 25px;
+  margin-top: 1rem;
+  margin-left: 7rem;
+  margin-bottom: 1rem;
+  margin-right: 5rem;
+}
+.input4 {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 20%;
+  font-size: 25px;
+  margin-top: 1rem;
+  margin-left: 12.5rem;
+  margin-bottom: 1rem;
+  margin-right: 5rem;
 }
 
-.Edit_button {
+
+
+
+
+
+
+.change_button ,.Edit_button{
   background-color: #b2734c;
   color: #fff;
   border: none;
   border-radius: 8px;
   margin-top: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 25px;
   cursor: pointer;
-  width: 100%;
+  width: 10%;
 }
 
-.Edit_button:hover {
+.delete_button {
+  background-color:rgb(196, 38, 38);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;  padding: 10px 20px;
+  font-size: 25px;
+  cursor: pointer;
+  width: 10%;
+}
+.Password_button{
+  background-color:green;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;  padding: 10px 20px;
+  font-size: 25px;
+  cursor: pointer;
+  width: 10%;
+}
+
+.Edit_button:hover, .change_button:hover , .delete_button:hover {
   background-color: #8c5c4c;
 }
+.Password_button:hover{
+background-color: rgb(5, 105, 5);
+}
+
