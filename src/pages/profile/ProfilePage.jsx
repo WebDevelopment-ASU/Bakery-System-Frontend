@@ -10,14 +10,13 @@ const ProfilePage = () => {
   });
 
   useEffect(() => {
-    // Fetch user data when the component mounts
     fetchUserData();
   }, []);
 
   const fetchUserData = async () => {
     try {
       const response = await httpClient.get('users/me');
-      setUser(response.data); // Assuming response.data contains user info
+      setUser(response.data); 
     } catch (error) {
       console.error('Failed to fetch user data:', error);
     }
@@ -46,9 +45,10 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <>
+      <div className={styles.container}>
       <h2 className={styles.h2}>Profile Info</h2>
-      {/* <header className={styles.logo}> <img src="profile.jpg" alt="logo" /> </header> */}
+      <div className={styles.photo}> <img src="background.jpg" alt="" /> </div>
       <form onSubmit={handleSubmit} className={styles.profile_form}>
         <div className={styles.profile}>
           <label className={styles.label}>Username :    </label>
@@ -78,8 +78,11 @@ const ProfilePage = () => {
           />
         </div>
         <button type="submit"  className={styles.Edit_button}>Update Profile</button>
+        <button type="submit"  className={styles.Edit_button}>Delete Profile</button>
+
       </form>
     </div>
+    </>
   );
 };
 
