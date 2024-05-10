@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import BestSellers from '../../components/BestSellers';
 import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
+import Footer from '../../components/footer/Footer';
 
 import banner from '../../images/landing1.png';
 import land2 from '../../images/landing2.png';
