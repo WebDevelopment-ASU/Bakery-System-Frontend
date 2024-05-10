@@ -1,48 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import httpClient from '../../utils/httpClient'; 
+import httpClient from '../../utils/httpClient';
 import styles from './ProfilePage.module.css';
 const ProfilePage = () => {
-  const [user, setUser] = useState({
-    username: '',
-    email: '',
-    role: ''
-  });
-
-  useEffect(() => {
-    fetchUserData();
-  }, []);
-
-  const fetchUserData = async () => {
-    try {
-      const response = await httpClient.get('users/me');
-      setUser(response.data); 
-    } catch (error) {
-      console.error('Failed to fetch user data:', error);
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await httpClient.put('users/{id}/update-me', {
-        username: user.username,
-        email: user.email,
-        role: user.role,
-      });
-      alert('Profile updated successfully!');
-    } catch (error) {
-      console.error('Profile update failed:', error);
-      alert('Profile update failed!');
-    }
-  };
-
-  const handleChange = (e) => {
-    setUser({
-      ...user,
-      [e.target.name]: e.target.value
+    const [user, setUser] = useState({
+        username: '',
+        email: '',
+        role: '',
     });
-  };
-
 
 
   // const validatePassword = async () => {
@@ -62,6 +26,41 @@ const ProfilePage = () => {
   //   }
   // };
   
+  useEffect(() => {
+    fetchUserData();
+}, []);
+
+const fetchUserData = async () => {
+    try {
+        const response = await httpClient.get('users/me');
+        setUser(response.data);
+    } catch (error) {
+        console.error('Failed to fetch user data:', error);
+    }
+};
+
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+        const response = await httpClient.put('users/{id}/update-me', {
+            username: user.username,
+            email: user.email,
+            role: user.role,
+        });
+        alert('Profile updated successfully!');
+    } catch (error) {
+        console.error('Profile update failed:', error);
+        alert('Profile update failed!');
+    }
+};
+
+const handleChange = (e) => {
+    setUser({
+        ...user,
+        [e.target.name]: e.target.value,
+    });
+};
+
 
   return (
     <>
@@ -113,6 +112,7 @@ const ProfilePage = () => {
     </div>
     </>
   );
+ 
 };
 
 export default ProfilePage;
