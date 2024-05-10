@@ -5,6 +5,8 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import LoginPage from './pages/login/LoginPage';
 import SignUpPage from './pages/signup/SignupPage';
 import Product from './pages/products/Products';
+import CreateProduct from './pages/products/CreateProduct';
+import EditProduct from './pages/products/EditProduct';
 
 function App() {
     return (
@@ -15,6 +17,8 @@ function App() {
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/signup" element={<SignUpPage />} />
                     <Route path="/products" element={<Product />} />
+                    <Route path="/add-product" element={<CreateProduct />} />
+                    <Route path="/edit-product/:id" element={<EditProduct />} />
                     {/* Add other routes as needed */}
                 </Routes>
             </div>
