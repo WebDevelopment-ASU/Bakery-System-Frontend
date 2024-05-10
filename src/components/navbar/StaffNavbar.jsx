@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './StaffNavbar.module.css';
 import { IoPersonSharp } from 'react-icons/io5';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,7 @@ const Navbar = () => {
                 <a href="./home">Home</a>
                 <a href="/About">About</a>
                 <a href="/products">Products</a>
-                <a href="/add">Add New Product</a>
+                <Link to="/add-product">Add New Product</Link>
                 <a href="/profileIcon">
                     <IoPersonSharp />
                 </a>
