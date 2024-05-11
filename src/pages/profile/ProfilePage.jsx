@@ -7,6 +7,21 @@ const ProfilePage = () => {
         email: '',
         role: '',
     });
+    
+    const [isOpen, setIsOpen] = useState(false); 
+
+
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen); 
+      };
+
+      const userData = [
+        { label: 'Option 1', value: 'Old password' },
+        { label: 'Option 2', value: 'New password' },
+        { label: 'Option 3', value: 'Confirm new password' },
+        { input: 'option 4', value:'change'}
+      ];
+    
 
     // const validatePassword = async () => {
     //   try {
@@ -64,7 +79,6 @@ const ProfilePage = () => {
         <>
             <div className={styles.container}>
                 <h2 className={styles.h2}>Profile Info</h2>
-                {/* <div className={styles.photo}> <img src="background.jpg" alt="" /> </div> */}
                 <form onSubmit={handleSubmit} className={styles.profile_form}>
                     <div className={styles.profile}>
                         <label className={styles.label}>Username : </label>
@@ -95,29 +109,47 @@ const ProfilePage = () => {
                             value={user.role}
                             onChange={handleChange}
                         />
-                        <div className={styles.profile}>
-                            <input
-                                className={styles.input4}
-                                type="text"
-                                name="Password"
-                                value={user.Password}
-                                placeholder="Enter password"
-                                onChange={handleChange}
-                            />
+
+                    <div className={styles.profile}>
+                        <label className={styles.label}>Password : </label>
+                        <input
+                            className={styles.input4}
+                            type="text"
+                            name="password"
+                            value={user.Password}
+                            placeholder="Enter Password"
+                            onChange={handleChange}
+                        />
                             <button type="submit" className={styles.Password_button}>
                                 Validate Password
                             </button>
                         </div>
                     </div>
+
+                    <div className={styles.Buttons_container}>
+                      <div className={styles.B_container}>
                     <button type="submit" className={styles.Edit_button}>
                         Update Profile
-                    </button>
-                    <button type="submit" className={styles.change_button}>
-                        Change Password
                     </button>
                     <button type="submit" className={styles.delete_button}>
                         Delete User
                     </button>
+
+                     </div>
+
+            <div className={styles.dropdown_container}>
+      <button onClick={toggleDropdown} className={styles.dropdown_button}> Change Password </button>
+      {isOpen && (
+        <div className={styles.dropdown_content}>
+          <input type="text" placeholder="Old Password" className={styles.textbox} />
+          <input type="text" placeholder="New Password" className={styles.textbox} />
+          <input type="text" placeholder="Confirm New Password" className={styles.textbox} />
+          <button className={styles.drop_button}>Confirm Change</button>
+        </div>
+      )}
+    </div>
+                    </div>
+                   
                 </form>
             </div>
         </>

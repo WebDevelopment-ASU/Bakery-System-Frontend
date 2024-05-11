@@ -1,27 +1,22 @@
-/* .container {
-  display: flex;
-  align-items: center;
-  padding: 10rem; 
-  background-color: #fff;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 800px; 
-  margin-top: 10rem;
-  margin-left: auto; 
-  margin-right: auto; 
-} */
 
-/* .photo {
-  flex-shrink: 0; 
-  margin-right: 5rem; 
+body {
+  background-image: url("D:\bakery\Bakery-System-Frontend\public\wallpaper.jpeg"); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0; 
+  padding: 0; 
+  
 }
 
-.photo img {
-  width: 300px; 
-  height: 500px;
-  border-radius: 1%; 
-} */
+.Buttons_container{
+  display: flex;
+  flex-direction: column;
+
+}
+.B_container{
+  display: flex;
+  flex-direction: row;
+}
 
 .h2 {
   font-size: 50px;
@@ -38,17 +33,12 @@
   flex: 1; 
 }
 
-.profile {
-  margin-top: 1rem;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
-  margin-right: 1rem;}
-
 .label {
   font-size: 40px;
   font-weight: initial;
   color: #b2734c;
   margin-bottom: 0.5rem;
+  margin-left: 1rem;
 }
 
 .input1 {
@@ -91,16 +81,10 @@
   width: 20%;
   font-size: 25px;
   margin-top: 1rem;
-  margin-left: 12.5rem;
+  margin-left: 1.5rem;
   margin-bottom: 1rem;
   margin-right: 5rem;
 }
-
-
-
-
-
-
 
 .change_button ,.Edit_button{
   background-color: #b2734c;
@@ -125,7 +109,8 @@
   margin-top: 1rem;
   margin-left: 1rem;
   margin-bottom: 1rem;
-  margin-right: 1rem;  padding: 10px 20px;
+  margin-right: 1rem; 
+  padding: 10px 20px;
   font-size: 25px;
   cursor: pointer;
   width: 10%;
@@ -144,10 +129,57 @@
   width: 10%;
 }
 
-.Edit_button:hover, .change_button:hover , .delete_button:hover {
+.Edit_button:hover, .change_button:hover , .delete_button:hover , .drop_button:hover{
   background-color: #8c5c4c;
 }
 .Password_button:hover{
 background-color: rgb(5, 105, 5);
 }
 
+.dropdown_container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown_button {
+  background: none;
+  color: #b2734c;
+  padding: 10px 15px;
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  margin-left: 0rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.dropdown_content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  padding: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
+
+.textbox {
+  margin-bottom: 10px;
+  font-size: 2rem;
+  color: rgb(194, 194, 194);
+}
+.drop_button{
+  font-size: 25px;
+  width: 50%;
+  background-color: #b2734c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+}
