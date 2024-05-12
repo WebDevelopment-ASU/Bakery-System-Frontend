@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import httpClient from '../../utils/httpClient';
 import styles from './ProfilePage.module.css';
+import Footer from '../../components/footer/Footer';
 
 const ProfilePage = () => {
     const [user, setUser] = useState({
