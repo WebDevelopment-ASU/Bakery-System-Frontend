@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BestSellers from '../../components/BestSellers';
-import Navbar from '../../components/Navbar';
+import BestSellers from '../../components/landing/BestSellers';
+import Navbar from '../../components/notauth/Navbar';
 import Footer from '../../components/footer/Footer';
 
-import banner from '../../images/landing1.png';
-import land2 from '../../images/landing2.png';
-import del from '../../images/deliveryLogo.png';
-import sell from '../../images/sellingLogo.png';
-import cust from '../../images/customizeLogo.png';
+import banner from '../../assets/landing1.png';
+import land2 from '../../assets/landing2.png';
+import del from '../../assets/deliveryLogo.png';
+import sell from '../../assets/sellingLogo.png';
+import cust from '../../assets/customizeLogo.png';
 
 // Animation keyframes
 const fadeAnimation = `
