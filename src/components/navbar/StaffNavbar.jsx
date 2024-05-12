@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import styles from './StaffNavbar.module.css';
 import { IoPersonSharp } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
+import BackeryLogo from '../../assets/backeryLogo.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div className={styles.Navbar}>
             <div className={styles.logo_container}>
-                <img src="./Bakery-Logo.png" alt="Logo" className={styles.logo} />
+                <img src={BackeryLogo} alt="Logo" className={styles.logo} />
                 <span className={styles.navlogo}>The Bakery Shop</span>
             </div>
 
