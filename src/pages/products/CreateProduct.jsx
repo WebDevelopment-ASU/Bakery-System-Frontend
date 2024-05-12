@@ -51,45 +51,43 @@ const CreateProduct = () => {
 
     return (
         <div>
-        
-         <div className={styles.container}>
-             <h1>Create New Product</h1>
-             <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Name"
-                    required
-                />
-                <textarea
-                    name="description"
-                    value={formData.description}
-                    onChange={handleChange}
-                    placeholder="Description"
-                />
-                <input
-                    type="number"
-                    name="price"
-                    value={formData.price}
-                    onChange={handleChange}
-                    placeholder="Price"
-                    required
-                />
-                <input
-                    type="number"
-                    name="stock"
-                    value={formData.stock}
-                    onChange={handleChange}
-                    placeholder="Stock"
-                    required
-                />
-                <input type="file" name="images" onChange={handleChange} accept="image/*" />
-                <button type="submit">Create Product</button>
-              </form>
+            <div className={styles.container}>
+                <h1>Create New Product</h1>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Name"
+                        required
+                    />
+                    <textarea
+                        name="description"
+                        value={formData.description}
+                        onChange={handleChange}
+                        placeholder="Description"
+                    />
+                    <input
+                        type="number"
+                        name="price"
+                        value={formData.price}
+                        onChange={handleChange}
+                        placeholder="Price"
+                        required
+                    />
+                    <input
+                        type="number"
+                        name="stock"
+                        value={formData.stock}
+                        onChange={handleChange}
+                        placeholder="Stock"
+                        required
+                    />
+                    <input type="file" name="images" onChange={handleChange} accept="image/*" />
+                    <button type="submit">Create Product</button>
+                </form>
             </div>
-        
         </div>
     );
 };

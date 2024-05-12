@@ -57,9 +57,10 @@ const EditProduct = () => {
                     <button type="submit">Update Product</button>
                 </form>
             </div>
-           
         </div>
-    ) : <p>Loading product details...</p>;
+    ) : (
+        <p>Loading product details...</p>
+    );
 };
 
 export default EditProduct;

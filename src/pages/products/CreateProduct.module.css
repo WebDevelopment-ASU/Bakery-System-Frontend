@@ -10,13 +10,18 @@
 }
 
 .container{
-    max-width: 1000px;
+    width: 100%;
     margin: 0 auto;
-    padding: 50px;
-    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
     background-color:white;
     border-radius: 2rem;
-    animation: slideIn 0.5s ease-in-out; /* Apply animation */
+    animation: slideIn 0.5s ease-in-out;
+    margin-bottom: 2rem ;
 }
 .container h1 {
     text-align: center;

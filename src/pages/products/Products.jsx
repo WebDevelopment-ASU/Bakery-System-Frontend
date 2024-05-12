@@ -69,7 +69,6 @@ const Product = () => {
 
     return (
         <div>
-            <Navbar />
             <section>
                 <div className={styles.title}>
                     <h1>Menu Of The Day</h1>
@@ -91,7 +90,6 @@ const Product = () => {
                     ))}
                 </div>
             </section>
-            <Footer />
         </div>
     );
 };
