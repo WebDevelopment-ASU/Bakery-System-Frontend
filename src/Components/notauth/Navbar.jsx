@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BackeryLogo from '../assets/backeryLogo.png';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
@@ -6,7 +7,7 @@ const Navbar = () => {
     return (
         <div className={styles.Navbar}>
             <div className={styles.logo_container}>
-                <img src="./Bakery-Logo.png" alt="Logo" className={styles.logo} />
+                <img src={BackeryLogo} alt="Logo" className={styles.logo} />
                 <span className={styles.navlogo}>The Bakery Shop</span>
             </div>
 

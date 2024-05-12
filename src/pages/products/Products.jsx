@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { jwtDecode } from 'jwt-decode';
+import { useNavigate } from 'react-router-dom';
 
 import styles from './Products.module.css';
 import httpClient from '../../utils/httpClient';
@@ -9,6 +10,8 @@ import Footer from '../../components/footer/Footer';
 const Product = () => {
     const [data, setData] = useState([]);
     const [userId, setUserId] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
+    const navigate = useNavigate();
 
     // Extract user ID from the token
     useEffect(() => {
@@ -19,13 +22,17 @@ const Product = () => {
         }
     }, []);
 
+    // Fetch all products
     useEffect(() => {
         const fetchProducts = async () => {
+            setIsLoading(true);
             try {
                 const response = await httpClient.get('/products');
                 setData(response.data.data);
+                setIsLoading(false);
             } catch (error) {
                 console.error('Failed to fetch products:', error);
+                setIsLoading(false);
             }
         };
 
@@ -53,13 +60,15 @@ const Product = () => {
             alert('You are not authorized to edit this product.');
             return;
         }
-        // Redirect to an edit page with the product ID
-        window.location.href = `/edit-product/${productId}`;
+        navigate(`/edit-product/${productId}`);
     };
+
+    if (isLoading) {
+        return <p>Loading Products...</p>;
+    }
 
     return (
         <div>
-            <Navbar />
             <section>
                 <div className={styles.title}>
                     <h1>Menu Of The Day</h1>
@@ -81,7 +90,6 @@ const Product = () => {
                     ))}
                 </div>
             </section>
-            <Footer />
         </div>
     );
 };
