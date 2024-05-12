@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BackeryLogo from '../assets/backeryLogo.png';
+import BackeryLogo from '../../assets/backeryLogo.png';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
