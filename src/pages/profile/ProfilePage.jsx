@@ -7,6 +7,10 @@ const ProfilePage = () => {
         username: '',
         email: '',
         role: '',
+        password: '', // Added to store password input
+        oldPassword: '', // For change password
+        newPassword: '', // For change password
+        confirmNewPassword: '', // For change password
     });
     const [isOpen, setIsOpen] = useState(false);
 
@@ -20,26 +24,57 @@ const ProfilePage = () => {
 
     const fetchUserData = async () => {
         try {
-            const response = await httpClient.get('users/me');
+            const response = await httpClient.get('/users/me', { headers: { 'Cache-Control': 'no-cache' } });
             setUser(response.data);
+            console.log(response.data);
         } catch (error) {
             console.error('Failed to fetch user data:', error);
         }
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        // try {
-        //     const response = await httpClient.put('users/{id}/update-me', {
-        //         username: user.username,
-        //         email: user.email,
-        //         role: user.role,
-        //     });
-        //     alert('Profile updated successfully!');
-        // } catch (error) {
-        //     console.error('Profile update failed:', error);
-        //     alert('Profile update failed!');
-        // }
+    const handleUpdateUser = async () => {
+        try {
+            const updateResponse = await httpClient.put(`/users/${user.id}/update-me`, {
+                username: user.username,
+                email: user.email,
+                role: user.role,
+            });
+            console.log('Update Response:', updateResponse);
+            if (updateResponse.status === 200) {
+                alert('User updated successfully!');
+                fetchUserData(); // Re-fetch user data
+            }
+        } catch (error) {
+            console.error('Failed to update user: ', error);
+            alert('Failed to Update User');
+        }
+    }
+
+    const handleDeleteUser = async () => {
+        try {
+            await httpClient.delete(`/users/${user.id}`);
+            alert('User deleted successfully!');
+        } catch (error) {
+            console.error('Failed to delete user:', error);
+            alert('Failed to delete user!');
+        }
+    };
+
+    const handlePasswordChange = async () => {
+        if (user.newPassword !== user.confirmNewPassword) {
+            alert('New passwords do not match!');
+            return;
+        }
+        try {
+            await httpClient.post(`/users/${user.id}/change-password`, {
+                oldPassword: user.oldPassword,
+                newPassword: user.newPassword,
+            });
+            alert('Password changed successfully!');
+        } catch (error) {
+            console.error('Password change failed:', error);
+            alert('Password change failed!');
+        }
     };
 
     const handleChange = (e) => {
@@ -49,11 +84,23 @@ const ProfilePage = () => {
         });
     };
 
+    const handleValidatePassword = async () => {
+        try {
+            await httpClient.post(`/users/${user.id}/validate-password`, {
+                password: user.password,
+            });
+            alert('Password is correct!');
+        } catch (error) {
+            console.error('Password is incorrect:', error);
+            alert('Password is incorrect!');
+        }
+    };
+
     return (
         <>
             <div className={styles.container}>
                 <h1 className={styles.h1}>Profile Info</h1>
-                <form onSubmit={handleSubmit} className={styles.profile_form}>
+                <form className={styles.profile_form}>
                     <div className={styles.profile}>
                         <label className={styles.label}>Username:</label>
                         <input
@@ -93,19 +140,22 @@ const ProfilePage = () => {
                                 type="password"
                                 name="password"
                                 placeholder="Enter Password"
+                                value={user.password}
                                 onChange={handleChange}
                             />
-                            <button type="button" className={styles.validate_button}>
+
+                            <button type="button" className={styles.validate_button} onClick={handleValidatePassword}>
                                 Validate Password
                             </button>
                         </div>
                     </div>
 
                     <div className={styles.buttons}>
-                        <button type="submit" className={styles.update_button}>
+                        <button type="button" onClick={handleUpdateUser} className={styles.update_button}>
                             Update Profile
                         </button>
-                        <button type="button" className={styles.delete_button}>
+
+                        <button type="button" onClick={handleDeleteUser} className={styles.delete_button}>
                             Delete User
                         </button>
                     </div>
@@ -118,7 +168,7 @@ const ProfilePage = () => {
                                 <input type="password" placeholder="Old Password" className={styles.input} />
                                 <input type="password" placeholder="New Password" className={styles.input} />
                                 <input type="password" placeholder="Confirm New Password" className={styles.input} />
-                                <button type="button" className={styles.button}>
+                                <button type="button" onClick={handlePasswordChange} className={styles.button}>
                                     Confirm Change
                                 </button>
                             </div>
