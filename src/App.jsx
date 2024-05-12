@@ -7,6 +7,7 @@ import SignUpPage from './pages/signup/SignupPage';
 import Product from './pages/products/Products';
 import CreateProduct from './pages/products/CreateProduct';
 import EditProduct from './pages/products/EditProduct';
+import Layout from './Layout';
 
 function App() {
     return (
@@ -16,10 +17,12 @@ function App() {
                     <Route path="/" element={<LandingPage />} />
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/signup" element={<SignUpPage />} />
-                    <Route path="/products" element={<Product />} />
-                    <Route path="/add-product" element={<CreateProduct />} />
-                    <Route path="/edit-product/:id" element={<EditProduct />} />
-                    {/* Add other routes as needed */}
+
+                    <Route element={<Layout />}>
+                        <Route path="/products" element={<Product />} />
+                        <Route path="/add-product" element={<CreateProduct />} />
+                        <Route path="/edit-product/:id" element={<EditProduct />} />
+                    </Route>
                 </Routes>
             </div>
         </Router>
