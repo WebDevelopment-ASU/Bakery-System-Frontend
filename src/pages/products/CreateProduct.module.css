@@ -1,0 +1,58 @@
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px;
+    position: relative; 
+    background-color:white;
+    border-radius: 2rem;
+    animation: slideIn 0.5s ease-in-out; /* Apply animation */
+}
+.container h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    word-spacing: 1rem;
+    color: #a06846;
+}
+.container form {
+    display: flex;
+    flex-direction: column;
+}
+.container input,textarea,button {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 40rem;
+    height: 3rem;
+    background-color: #f1f1f1;
+    transition: border-color 0.3s ease; /* Add transition for border color */
+}
+.container input[type="file"] {
+    margin-bottom: 20px;
+    background-color: #f1f1f1;
+    transition: border-color 0.3s ease; /* Add transition for border color */
+}
+.container button {
+    background-color: #a06846;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease; /* Add transition for border color */
+}
+
+.container button:hover {
+    background-color: #a06846d7;
+}
