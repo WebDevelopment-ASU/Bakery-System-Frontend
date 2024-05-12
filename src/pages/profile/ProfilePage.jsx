@@ -48,7 +48,7 @@ const ProfilePage = () => {
             console.error('Failed to update user: ', error);
             alert('Failed to Update User');
         }
-    }
+    };
 
     const handleDeleteUser = async () => {
         try {
@@ -160,9 +160,10 @@ const ProfilePage = () => {
                         </button>
                     </div>
                     <div className={styles.dropdown}>
-                        <button onClick={toggleDropdown} className={styles.dropdown_button}>
+                        <button type="button" onClick={toggleDropdown} className={styles.dropdown_button}>
                             {isOpen ? '▼' : '►'} Change Password
                         </button>
+
                         {isOpen && (
                             <div className={styles.dropdownContent}>
                                 <input type="password" placeholder="Old Password" className={styles.input} />
