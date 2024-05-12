@@ -3,7 +3,7 @@ import Navbar from './components/navbar/StaffNavbar';
 import Footer from './components/footer/Footer';
 import { Outlet } from 'react-router-dom';
 
-export default function Layout() {
+export function StaffLayout() {
     return (
         <div className="w-full">
             <Navbar />
