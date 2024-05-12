@@ -41,8 +41,7 @@ const EditProduct = () => {
     };
 
     return product ? (
-        <div>
-            <Navbar />
+        <div className={styles.all}>
             <div className={styles.editProduct}>
                 <h1>Edit Product</h1>
                 <form onSubmit={handleSubmit}>
@@ -58,7 +57,7 @@ const EditProduct = () => {
                     <button type="submit">Update Product</button>
                 </form>
             </div>
-            <Footer />
+           
         </div>
     ) : <p>Loading product details...</p>;
 };

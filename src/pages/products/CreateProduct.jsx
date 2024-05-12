@@ -51,9 +51,10 @@ const CreateProduct = () => {
 
     return (
         <div>
-            <Navbar />
-            <h1>Create New Product</h1>
-            <form onSubmit={handleSubmit}>
+        
+         <div className={styles.container}>
+             <h1>Create New Product</h1>
+             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
                     name="name"
@@ -86,8 +87,9 @@ const CreateProduct = () => {
                 />
                 <input type="file" name="images" onChange={handleChange} accept="image/*" />
                 <button type="submit">Create Product</button>
-            </form>
-            <Footer />
+              </form>
+            </div>
+        
         </div>
     );
 };
