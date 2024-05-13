@@ -6,10 +6,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode'; // Import jwtDecode
 
 import styles from './LoginPage.module.css';
+import { toast } from 'sonner';
 
 function LoginPage(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -18,16 +20,17 @@ function LoginPage(props) {
             const response = await httpClient.post('/auth/signin', { username, password });
             console.log('response : ', response);
             localStorage.setItem('token', response.data.token);
-            alert('Login successful!');
             const decodedToken = jwtDecode(response.data.token);
             if (decodedToken.role === 'STAFF') {
+                toast.success('Login successful!');
                 navigate('/staff/products');
             } else if (decodedToken.role === 'CUSTOMER') {
+                toast.success('Login successful!');
                 navigate('/customer/products');
             }
         } catch (error) {
             console.error('Login failed:', error);
-            alert('Login failed!');
+            toast.error('Login failed! Please check your credentials.');
         }
     };
 

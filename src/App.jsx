@@ -9,6 +9,7 @@ import CreateProduct from './pages/products/CreateProduct';
 import EditProduct from './pages/products/EditProduct';
 import { StaffLayout, CustomerLayout } from './Layout';
 import CustomerProduct from './pages/CustomerPage/Products';
+import { Toaster } from 'sonner';
 
 function App() {
     return (
