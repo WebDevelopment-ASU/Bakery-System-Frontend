@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import httpClient from '../../utils/httpClient';
 import styles from './ProfilePage.module.css';
-import Footer from '../../components/footer/Footer';
 
 const ProfilePage = () => {
     const [user, setUser] = useState({
@@ -99,84 +98,96 @@ const ProfilePage = () => {
 
     return (
         <>
-            <div className={styles.container}>
-                <h1 className={styles.h1}>Profile Info</h1>
-                <form className={styles.profile_form}>
-                    <div className={styles.profile}>
-                        <label className={styles.label}>Username:</label>
-                        <input
-                            className={styles.input}
-                            type="text"
-                            name="username"
-                            value={user.username}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className={styles.profile}>
-                        <label className={styles.label}>Email:</label>
-                        <input
-                            className={styles.input}
-                            type="email"
-                            name="email"
-                            value={user.email}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className={styles.profile}>
-                        <label className={styles.label}>Role:</label>
-                        <input
-                            className={styles.input}
-                            type="text"
-                            name="role"
-                            value={user.role}
-                            onChange={handleChange}
-                        />
-                    </div>
-
-                    <div className={styles.profile}>
-                        <label className={styles.label}>Password:</label>
-                        <div className={styles.inputButtonGroup}>
+            <div className={styles.profileBackground}>
+                {' '}
+                {/* Use the new class here */}
+                <div className={styles.container}>
+                    <h1 className={styles.h1}>Profile Info</h1>
+                    <form className={styles.profile_form}>
+                        <div className={styles.profile}>
+                            <label className={styles.label}>Username:</label>
                             <input
                                 className={styles.input}
-                                type="password"
-                                name="password"
-                                placeholder="Enter Password"
-                                value={user.password}
+                                type="text"
+                                name="username"
+                                value={user.username}
                                 onChange={handleChange}
                             />
-
-                            <button type="button" className={styles.validate_button} onClick={handleValidatePassword}>
-                                Validate Password
-                            </button>
                         </div>
-                    </div>
+                        <div className={styles.profile}>
+                            <label className={styles.label}>Email:</label>
+                            <input
+                                className={styles.input}
+                                type="email"
+                                name="email"
+                                value={user.email}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className={styles.profile}>
+                            <label className={styles.label}>Role:</label>
+                            <input
+                                className={styles.input}
+                                type="text"
+                                name="role"
+                                value={user.role}
+                                onChange={handleChange}
+                            />
+                        </div>
 
-                    <div className={styles.buttons}>
-                        <button type="button" onClick={handleUpdateUser} className={styles.update_button}>
-                            Update Profile
-                        </button>
+                        <div className={styles.profile}>
+                            <label className={styles.label}>Password:</label>
+                            <div className={styles.inputButtonGroup}>
+                                <input
+                                    className={styles.input}
+                                    type="password"
+                                    name="password"
+                                    placeholder="Enter Password"
+                                    value={user.password}
+                                    onChange={handleChange}
+                                />
 
-                        <button type="button" onClick={handleDeleteUser} className={styles.delete_button}>
-                            Delete User
-                        </button>
-                    </div>
-                    <div className={styles.dropdown}>
-                        <button type="button" onClick={toggleDropdown} className={styles.dropdown_button}>
-                            {isOpen ? '▼' : '►'} Change Password
-                        </button>
-
-                        {isOpen && (
-                            <div className={styles.dropdownContent}>
-                                <input type="password" placeholder="Old Password" className={styles.input} />
-                                <input type="password" placeholder="New Password" className={styles.input} />
-                                <input type="password" placeholder="Confirm New Password" className={styles.input} />
-                                <button type="button" onClick={handlePasswordChange} className={styles.button}>
-                                    Confirm Change
+                                <button
+                                    type="button"
+                                    className={styles.validate_button}
+                                    onClick={handleValidatePassword}
+                                >
+                                    Validate Password
                                 </button>
                             </div>
-                        )}
-                    </div>
-                </form>
+                        </div>
+
+                        <div className={styles.buttons}>
+                            <button type="button" onClick={handleUpdateUser} className={styles.update_button}>
+                                Update Profile
+                            </button>
+
+                            <button type="button" onClick={handleDeleteUser} className={styles.delete_button}>
+                                Delete User
+                            </button>
+                        </div>
+                        <div className={styles.dropdown}>
+                            <button type="button" onClick={toggleDropdown} className={styles.dropdown_button}>
+                                {isOpen ? '▼' : '►'} Change Password
+                            </button>
+
+                            {isOpen && (
+                                <div className={styles.dropdownContent}>
+                                    <input type="password" placeholder="Old Password" className={styles.input} />
+                                    <input type="password" placeholder="New Password" className={styles.input} />
+                                    <input
+                                        type="password"
+                                        placeholder="Confirm New Password"
+                                        className={styles.input}
+                                    />
+                                    <button type="button" onClick={handlePasswordChange} className={styles.button}>
+                                        Confirm Change
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+                    </form>
+                </div>
             </div>
         </>
     );

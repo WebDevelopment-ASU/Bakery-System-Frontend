@@ -1,11 +1,16 @@
 body {
+  background-image: none;
+  background-size: initial;
+  background-repeat: repeat;
+  background-attachment: scroll;
+}
+
+.profileBackground {
   background-image: url("../../assets/wallpaper.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* This ensures the background is fixed during scrolling */
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+  background-attachment: fixed;
+  width: 100%;
 }
 
 .container {
