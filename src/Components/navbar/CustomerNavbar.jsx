@@ -19,7 +19,9 @@ const CustomerNavbar = () => {
                 <a href="/customer/products">Products</a>
                 <a href="/cart">Cart</a>
                 <a href="/order">Order</a>
-                <a href="/logout">Logout</a>
+                <a href="/" type="button" onClick={() => localStorage.removeItem('token')}>
+                    Logout
+                </a>
                 <a href="/customer/profile">
                     <IoPersonSharp />
                 </a>

@@ -18,7 +18,9 @@ const StaffNavbar = () => {
                 <a href="/About">About</a>
                 <a href="/staff/products">Products</a>
                 <Link to="/staff/add-product">Add New Product</Link>
-                <a href="/logout">Logout</a>
+                <a href="/" type="button" onClick={() => localStorage.removeItem('token')}>
+                    Logout
+                </a>
                 <a href="/staff/profile">
                     <IoPersonSharp />
                 </a>
