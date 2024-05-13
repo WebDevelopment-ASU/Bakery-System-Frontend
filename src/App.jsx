@@ -19,15 +19,17 @@ function App() {
                 <Route path="/signup" element={<SignUpPage />} />
 
                 <Route element={<StaffLayout />}>
-                    <Route path="/products" element={<Product />} />
-                    <Route path="/add-product" element={<CreateProduct />} />
-                    <Route path="/edit-product/:id" element={<EditProduct />} />
-                    <Route path="/profile" element={<ProfilePage />} />
+                    <Route path="/staff/home" element={<LandingPage />} />
+                    <Route path="/staff/products" element={<Product />} />
+                    <Route path="/staff/add-product" element={<CreateProduct />} />
+                    <Route path="/staff/edit-product/:id" element={<EditProduct />} />
+                    <Route path="/staff/profile" element={<ProfilePage />} />
                 </Route>
 
                 <Route element={<CustomerLayout />}>
-                    <Route path="/customer" element={<CustomerProduct />} />
-                    <Route path="/profile" element={<ProfilePage />} />
+                    <Route path="/customer/home" element={<LandingPage />} />
+                    <Route path="/customer/products" element={<CustomerProduct />} />
+                    <Route path="/customer/profile" element={<ProfilePage />} />
                 </Route>
             </Routes>
         </Router>
