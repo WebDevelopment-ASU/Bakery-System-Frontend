@@ -2,23 +2,29 @@ import React, { useState } from 'react';
 import httpClient from '../../utils/httpClient';
 import Header from '../../components/credentials/Credentials-Header';
 import Footer from '../../components/credentials/Credentials-Footer';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode'; // Import jwtDecode
 
 import styles from './LoginPage.module.css';
 
 function LoginPage(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await httpClient.post('/auth/signin', { username, password });
-            // print the response
             console.log('response : ', response);
             localStorage.setItem('token', response.data.token);
             alert('Login successful!');
-            // Optionally redirect or change the component state upon successful login
+            const decodedToken = jwtDecode(response.data.token);
+            if (decodedToken.role === 'STAFF') {
+                navigate('/staff/products');
+            } else if (decodedToken.role === 'CUSTOMER') {
+                navigate('/customer/products');
+            }
         } catch (error) {
             console.error('Login failed:', error);
             alert('Login failed!');

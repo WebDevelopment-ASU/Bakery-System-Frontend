@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import httpClient from '../../utils/httpClient';
 import Header from '../../components/credentials/Credentials-Header';
 import Footer from '../../components/credentials/Credentials-Footer';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode';
 
 import styles from './SignupPage.module.css';
 
@@ -11,6 +12,7 @@ const SignUpPage = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [role, setRole] = useState('CUSTOMER');
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,7 +24,14 @@ const SignUpPage = (props) => {
                 role,
             });
             alert('Signup successful!');
-            // Optionally redirect or change the component state upon successful signup
+            const token = response.data.token;
+            localStorage.setItem('token', token);
+            const decodedToken = jwtDecode(token);
+            if (decodedToken.role === 'STAFF') {
+                navigate('/staff/products');
+            } else if (decodedToken.role === 'CUSTOMER') {
+                navigate('/customer/products');
+            }
         } catch (error) {
             console.error('Signup failed:', error);
             alert('Signup failed!');
