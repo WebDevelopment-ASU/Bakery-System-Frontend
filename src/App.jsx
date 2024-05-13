@@ -7,7 +7,7 @@ import ProfilePage from './pages/profile/ProfilePage';
 import Product from './pages/products/Products';
 import CreateProduct from './pages/products/CreateProduct';
 import EditProduct from './pages/products/EditProduct';
-import { StaffLayout } from './Layout';
+import { StaffLayout, CustomerLayout } from './Layout';
 import CustomerProduct from './pages/CustomerPage/Products';
 
 function App() {
@@ -17,12 +17,16 @@ function App() {
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/signup" element={<SignUpPage />} />
-                <Route path="/customer" element={<CustomerProduct />} />
 
                 <Route element={<StaffLayout />}>
                     <Route path="/products" element={<Product />} />
                     <Route path="/add-product" element={<CreateProduct />} />
                     <Route path="/edit-product/:id" element={<EditProduct />} />
+                    <Route path="/profile" element={<ProfilePage />} />
+                </Route>
+
+                <Route element={<CustomerLayout />}>
+                    <Route path="/customer" element={<CustomerProduct />} />
                     <Route path="/profile" element={<ProfilePage />} />
                 </Route>
             </Routes>

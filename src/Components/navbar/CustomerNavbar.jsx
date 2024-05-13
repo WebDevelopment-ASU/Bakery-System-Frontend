@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import styles from './StaffNavbar.module.css';
+import styles from './CustomerNavbar.module.css';
 import { IoPersonSharp } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import BackeryLogo from '../../assets/backeryLogo.png';
 
-const Navbar = () => {
+const CustomerNavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div className={styles.Navbar}>
@@ -33,4 +33,4 @@ const Navbar = () => {
         </div>
     );
 };
-export default Navbar;
+export default CustomerNavbar;
