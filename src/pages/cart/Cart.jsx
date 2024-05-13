@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import choco from '../../images/ChocolateCake.png';
-import muff from '../../images/blueberrymuffins.png';
-import red from '../../images/RedVelvetCake.png';
+import choco from '../../assets/ChocolateCake.png';
+import muff from '../../assets/blueberrymuffins.png';
+import red from '../../assets/RedVelvetCake.png';
 
 const Cart = () => {
     const [cartItems, setCartItems] = useState([
@@ -52,68 +52,77 @@ const Cart = () => {
     };
 
     return (
-        <div className="container mx-auto mt-8 flex">
-            <div className="flex-1 pr-8">
+        <>
+            <div className="container w-full mx-auto mt-8 flex">
                 <h1 className="text-3xl font-semibold mb-4">Shopping Cart</h1>
-                {cartItems.map((item) => (
-                    <div key={item.id} className="bg-white rounded-md border-b-2 border-gray-200 p-4 mb-4">
-                        <div className="flex items-center mb-2">
-                            <img src={item.image} alt={item.name} className="w-24 h-24 object-cover rounded-md mr-4" />
-                            <div>
-                                <h2 className="text-xl font-semibold">{item.name}</h2>
-                                <p className="text-gray-600">{item.description}</p>
-                                <p className="text-gray-700">Quantity: {item.quantity}</p>
-                                <p className="text-gray-700">Price: ${item.price.toFixed(2)}</p>
+            </div>
+
+            <div className="container w-full mx-auto mt-8 flex my-12">
+                <div className="pr-8 w-full basis-1/2">
+                    {cartItems.map((item) => (
+                        <div key={item.id} className="bg-white rounded-md border-b-2 border-gray-200 p-4 mb-4">
+                            <div className="flex items-center mb-2">
+                                <img
+                                    src={item.image}
+                                    alt={item.name}
+                                    className="w-24 h-24 object-cover rounded-md mr-4"
+                                />
+                                <div>
+                                    <h2 className="text-xl font-semibold">{item.name}</h2>
+                                    <p className="text-gray-600">{item.description}</p>
+                                    <p className="text-gray-700">Quantity: {item.quantity}</p>
+                                    <p className="text-gray-700">Price: ${item.price.toFixed(2)}</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-4">
+                                <button
+                                    className="text-red-600 font-semibold hover:text-red-800"
+                                    onClick={() => removeItem(item.id)}
+                                >
+                                    Remove
+                                </button>
+                                <div className="flex items-center justify-center">
+                                    <button
+                                        className="border w-12 rounded-full px-2 py-1"
+                                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                                        disabled={item.quantity === 1}
+                                    >
+                                        -
+                                    </button>
+                                    <span className="mx-2">{item.quantity}</span>
+                                    <button
+                                        className="border w-12 rounded-full px-2 py-1"
+                                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                                    >
+                                        +
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <div className="flex justify-between items-center">
-                            <button
-                                className="text-red-600 font-semibold hover:text-red-800"
-                                onClick={() => removeItem(item.id)}
-                            >
-                                Remove
-                            </button>
-                            <div className="flex items-center">
-                                <button
-                                    className="border rounded-full px-2 py-1"
-                                    onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                                    disabled={item.quantity === 1}
-                                >
-                                    -
-                                </button>
-                                <span className="mx-2">{item.quantity}</span>
-                                <button
-                                    className="border rounded-full px-2 py-1"
-                                    onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                                >
-                                    +
-                                </button>
-                            </div>
+                    ))}
+                </div>
+                <div className="flex-1 bg-gray-100 p-4 rounded-md">
+                    <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
+                    <div className="flex justify-between mb-4">
+                        <span>Subtotal:</span>
+                        <span>${totalPrice.toFixed(2)}</span>
+                    </div>
+                    <div className="flex justify-between">
+                        <span>Shipping:</span>
+                        <span>${shippingCost.toFixed(2)}</span>
+                    </div>
+                    <div className="border-t mt-4 pt-4">
+                        <div className="flex justify-between font-semibold mb-12">
+                            <span>Total:</span>
+                            <span>${(totalPrice + shippingCost).toFixed(2)}</span>
                         </div>
+                        <Link to="/customer/checkout" className="px-6 py-2 mt-12 bg-blue-500 text-white rounded-md">
+                            Proceed to Checkout
+                        </Link>
                     </div>
-                ))}
-            </div>
-            <div className="flex-1 bg-gray-100 p-4 rounded-md">
-                <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
-                <div className="flex justify-between mb-4">
-                    <span>Subtotal:</span>
-                    <span>${totalPrice.toFixed(2)}</span>
-                </div>
-                <div className="flex justify-between">
-                    <span>Shipping:</span>
-                    <span>${shippingCost.toFixed(2)}</span>
-                </div>
-                <div className="border-t mt-4 pt-4">
-                    <div className="flex justify-between font-semibold">
-                        <span>Total:</span>
-                        <span>${(totalPrice + shippingCost).toFixed(2)}</span>
-                    </div>
-                    <button className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-md">
-                        <Link to="/customer/checkout">Proceed to Checkout</Link>
-                    </button>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

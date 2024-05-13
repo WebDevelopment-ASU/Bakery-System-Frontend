@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const httpClient = axios.create({
-    baseURL: 'https://bakery-system-backend.onrender.com/api',
+    // baseURL: 'https://bakery-system-backend.onrender.com/api',
+    baseURL: 'http://localhost:3001/api',
 });
 
 httpClient.interceptors.request.use((config) => {
