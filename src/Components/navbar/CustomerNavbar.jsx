@@ -14,12 +14,13 @@ const CustomerNavbar = () => {
             </div>
 
             <div className={isOpen ? `${styles.items} ${styles.open}` : styles.items}>
-                <a href="./home">Home</a>
+                <a href="/home">Home</a>
                 <a href="/About">About</a>
-                <a href="/products">Products</a>
+                <a href="/customer/products">Products</a>
                 <a href="/cart">Cart</a>
                 <a href="/order">Order</a>
-                <a href="/profileIcon">
+                <a href="/logout">Logout</a>
+                <a href="/customer/profile">
                     <IoPersonSharp />
                 </a>
             </div>

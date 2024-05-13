@@ -14,11 +14,12 @@ const StaffNavbar = () => {
             </div>
 
             <div className={isOpen ? `${styles.items} ${styles.open}` : styles.items}>
-                <a href="./home">Home</a>
+                <a href="/home">Home</a>
                 <a href="/About">About</a>
-                <a href="/products">Products</a>
-                <Link to="/add-product">Add New Product</Link>
-                <a href="/profileIcon">
+                <a href="/staff/products">Products</a>
+                <Link to="/staff/add-product">Add New Product</Link>
+                <a href="/logout">Logout</a>
+                <a href="/staff/profile">
                     <IoPersonSharp />
                 </a>
             </div>
