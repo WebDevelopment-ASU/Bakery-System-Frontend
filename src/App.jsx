@@ -11,6 +11,9 @@ import { StaffLayout, CustomerLayout } from './Layout';
 import CustomerProduct from './pages/CustomerPage/Products';
 import { Toaster } from 'sonner';
 
+import Cart from './pages/cart/Cart';
+import Checkout from './pages/checkout/Checkout';
+
 function App() {
     return (
         <Router>
@@ -31,6 +34,8 @@ function App() {
                     <Route path="/customer/home" element={<LandingPage />} />
                     <Route path="/customer/products" element={<CustomerProduct />} />
                     <Route path="/customer/profile" element={<ProfilePage />} />
+                    <Route path="/customer/cart" element={<Cart />} />
+                    <Route path="/customer/checkout" element={<Checkout />} />
                 </Route>
             </Routes>
         </Router>

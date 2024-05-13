@@ -17,7 +17,7 @@ const CustomerNavbar = () => {
                 <a href="/home">Home</a>
                 <a href="/About">About</a>
                 <a href="/customer/products">Products</a>
-                <a href="/cart">Cart</a>
+                <a href="/customer/cart">Cart</a>
                 <a href="/order">Order</a>
                 <a href="/" type="button" onClick={() => localStorage.removeItem('token')}>
                     Logout
