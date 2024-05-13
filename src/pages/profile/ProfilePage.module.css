@@ -2,8 +2,10 @@ body {
   background-image: url("../../assets/wallpaper.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed; /* This ensures the background is fixed during scrolling */
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 .container {
@@ -16,7 +18,7 @@ body {
 }
 
 .h1 {
-  font-size: 24px;
+  font-size: 34px;
   font-weight: bold;
   color: #b2734c;
   text-align: left;
@@ -50,6 +52,7 @@ body {
 .buttons {
   display: flex;
   gap: 30px;
+  margin-top: 10px;
 }
 
 .inputButtonGroup {
@@ -60,15 +63,19 @@ body {
 .input {
   flex: 1;
   margin-right: 50px;
+  flex-basis: 70%;
 }
 
 .validate_button {
+  flex: 1;
   padding: 10px;
   color: white;
   background-color: green;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-bottom: 0px;
+  flex-basis: 30%;
 }
 
 .validate_button:hover {
@@ -127,6 +134,7 @@ body {
   cursor: pointer;
   display: block;
   font-size: medium;
+  width: 100%;
 }
 
 .dropdown_button:hover{
@@ -140,13 +148,12 @@ body {
 .dropdownContent {
   display: block;
   flex-direction: column;
-  position: absolute;
-  background-color: transparent;
-  min-width: 160px;
+  position: relative; /* Changed from absolute to relative */
+  min-width: 160px; /* Adjust width as necessary */
   box-shadow: none;
   padding: 12px 16px;
   z-index: 1;
-  width: 100%;
+  width: 100%; /* Ensures it takes full container width */
   border: 1px solid #ccc;
   align-items: center;
   justify-content: center;

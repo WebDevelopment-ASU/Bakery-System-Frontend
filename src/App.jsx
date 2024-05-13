@@ -11,17 +11,20 @@ import { StaffLayout } from './Layout';
 
 function App() {
     return (
-        <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/signup" element={<SignUpPage />} />
+        <Router>
+            <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/signup" element={<SignUpPage />} />
 
-            <Route element={<StaffLayout />}>
-                <Route path="/products" element={<Product />} />
-                <Route path="/add-product" element={<CreateProduct />} />
-                <Route path="/edit-product/:id" element={<EditProduct />} />
-            </Route>
-        </Routes>
+                <Route element={<StaffLayout />}>
+                    <Route path="/products" element={<Product />} />
+                    <Route path="/add-product" element={<CreateProduct />} />
+                    <Route path="/edit-product/:id" element={<EditProduct />} />
+                    <Route path="/profile" element={<ProfilePage />} />
+                </Route>
+            </Routes>
+        </Router>
     );
 }
 
