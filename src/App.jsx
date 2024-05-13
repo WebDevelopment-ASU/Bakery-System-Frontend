@@ -8,6 +8,7 @@ import Product from './pages/products/Products';
 import CreateProduct from './pages/products/CreateProduct';
 import EditProduct from './pages/products/EditProduct';
 import { StaffLayout } from './Layout';
+import CustomerProduct from './pages/CustomerPage/Products';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/signup" element={<SignUpPage />} />
+                <Route path="/customer" element={<CustomerProduct />} />
 
                 <Route element={<StaffLayout />}>
                     <Route path="/products" element={<Product />} />

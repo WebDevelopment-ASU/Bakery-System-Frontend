@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom';
 
 import styles from './Products.module.css';
 import httpClient from '../../utils/httpClient';
-import Navbar from '../../components/navbar/StaffNavbar';
+import Navbar from '../../components/navbar/CustomerNavbar';
 import Footer from '../../components/footer/Footer';
 import { FaCartPlus } from 'react-icons/fa';
 
-const Product = () => {
+const CustomerProduct = () => {
     const [data, setData] = useState([]);
     const [userId, setUserId] = useState('');
     const [isLoading, setIsLoading] = useState(true);
@@ -97,4 +97,4 @@ const Product = () => {
     );
 };
 
-export default Product;
+export default CustomerProduct;
