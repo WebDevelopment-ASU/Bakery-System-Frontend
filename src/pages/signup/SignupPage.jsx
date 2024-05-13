@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import httpClient from '../../utils/httpClient';
-import Header from '../../components/Credentials-Header';
-import Footer from '../../components/Credentials-Footer';
+import Header from '../../components/credentials/Credentials-Header';
+import Footer from '../../components/credentials/Credentials-Footer';
 import { Link } from 'react-router-dom';
 
 import styles from './SignupPage.module.css';

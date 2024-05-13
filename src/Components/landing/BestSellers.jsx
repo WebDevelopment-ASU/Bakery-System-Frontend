@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import choco from '../images/ChocolateCake.png';
-import muff from '../images/blueberrymuffins.png';
-import red from '../images/RedVelvetCake.png';
-import vanil from '../images/VanillaCupCakes.png';
-import tart from '../images/FruitTart.png';
-import chee from '../images/CheeseCake.png';
-import lemo from '../images/LemonBars.png';
-import straw from '../images/StrawberryShortcaker.png';
+import choco from '../../assets/ChocolateCake.png';
+import muff from '../../assets/blueberrymuffins.png';
+import red from '../../assets/RedVelvetCake.png';
+import vanil from '../../assets/VanillaCupCakes.png';
+import tart from '../../assets/FruitTart.png';
+import chee from '../../assets/CheeseCake.png';
+import lemo from '../../assets/LemonBars.png';
+import straw from '../../assets/StrawberryShortcaker.png';
 
 const BestSellers = () => {
     const BestSellers = [
