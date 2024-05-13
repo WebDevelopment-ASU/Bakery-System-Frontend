@@ -5,6 +5,11 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import LoginPage from './pages/login/LoginPage';
 import SignUpPage from './pages/signup/SignupPage';
 
+import Cart from './pages/cart/Cart'
+import Checkout from './pages/checkout/Checkout'
+
+
+
 function App() {
   return (
     <Router>
@@ -13,7 +18,8 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
-          {/* Add other routes as needed */}
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </div>
     </Router>
