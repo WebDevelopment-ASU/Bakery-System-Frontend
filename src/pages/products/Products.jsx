@@ -60,7 +60,7 @@ const Product = () => {
             alert('You are not authorized to edit this product.');
             return;
         }
-        navigate(`/edit-product/${productId}`);
+        navigate(`/staff/edit-product/${productId}`);
     };
 
     if (isLoading) {

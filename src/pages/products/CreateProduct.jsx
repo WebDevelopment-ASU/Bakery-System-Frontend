@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import httpClient from '../../utils/httpClient';
 import styles from './CreateProduct.module.css';
-import Navbar from '../../components/navbar/StaffNavbar';
-import Footer from '../../components/footer/Footer';
+import { toast } from 'sonner';
 
 const CreateProduct = () => {
     const [formData, setFormData] = useState({
@@ -41,11 +40,11 @@ const CreateProduct = () => {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-            console.log(response.data);
-            navigate('/products');
+            toast.success('Product Created successful!');
+            navigate('/staff/products');
         } catch (error) {
             console.error('Failed to create product:', error);
-            alert('Failed to create product');
+            toast.error('Product Created Failed!');
         }
     };
 

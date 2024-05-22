@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import httpClient from '../../utils/httpClient';
 import styles from './ProfilePage.module.css';
+import { toast } from 'sonner';
 
 const ProfilePage = () => {
     const [user, setUser] = useState({
@@ -42,7 +43,7 @@ const ProfilePage = () => {
             console.log('Update Response:', updateResponse);
             if (updateResponse.status === 200) {
                 alert('User updated successfully!');
-                fetchUserData(); // Re-fetch user data
+                fetchUserData();
             }
         } catch (error) {
             console.error('Failed to update user: ', error);
@@ -53,10 +54,10 @@ const ProfilePage = () => {
     const handleDeleteUser = async () => {
         try {
             await httpClient.delete(`/users/${user.id}`);
-            alert('User deleted successfully!');
+            toast.success('User deleted successfully!');
         } catch (error) {
             console.error('Failed to delete user:', error);
-            alert('Failed to delete user!');
+            toast.error('Failed to delete user!');
         }
     };
 
@@ -70,10 +71,10 @@ const ProfilePage = () => {
                 oldPassword: user.oldPassword,
                 newPassword: user.newPassword,
             });
-            alert('Password changed successfully!');
+            toast.success('Password changed successfully!');
         } catch (error) {
             console.error('Password change failed:', error);
-            alert('Password change failed!');
+            toast.error('Password change failed!');
         }
     };
 

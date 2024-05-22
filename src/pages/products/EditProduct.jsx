@@ -3,8 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 import httpClient from '../../utils/httpClient';
 import styles from './EditProduct.module.css';
-import Navbar from '../../components/navbar/StaffNavbar';
-import Footer from '../../components/footer/Footer';
+import { toast } from 'sonner';
 
 const EditProduct = () => {
     const { id } = useParams();
@@ -34,9 +33,11 @@ const EditProduct = () => {
 
         try {
             await httpClient.put(`/products/${id}`, updatedProduct);
-            navigate('/products');
+            toast.success('Product Update successful!');
+            navigate('/staff/products');
         } catch (error) {
             console.error('Failed to update product:', error);
+            toast.error('Product Update Failed!');
         }
     };
 
